@@ -59,3 +59,24 @@ button {
 .todo__item h3{
     color: black;
 }
+@media only screen and (max-width: 768px){
+    .todo__create{
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        width: 300px;
+    }
+    .col-6{
+        width: 100%;
+    }
+    .create__button{
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width: 660px){
+    /* .todos__container{
+        width: 100%;
+    } */
+
+}
