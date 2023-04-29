@@ -8,6 +8,7 @@ const ToDoForm = ({create}) => {
         const newTodo = {
             id: Date.now(),
             body: todo,
+            done: false,
         }
         newTodo.body ? create(newTodo) : <div style={{color: "red"}}>hello</div>
 
