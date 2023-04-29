@@ -41,7 +41,7 @@ function App() {
                   <ToDoForm create={createToDo} />
                   {todos.length ? <ToDos className="mt-5" todos={todos} remove={removeToDo} change={changeToDo}/> : <div className="d-flex justify-content-center">
                       <p className="p__noTodo">Click here to add new task</p>
-                      <img style={{height: '65px'}} src={arrow} alt="arrow"/>
+                      <img className='image' src={arrow} alt="arrow"/>
                   </div>}
               </div>
           </div>

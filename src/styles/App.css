@@ -59,6 +59,9 @@ button {
 .todo__item h3{
     color: black;
 }
+.image{
+    height: 65px;
+}
 @media only screen and (max-width: 768px){
     .todo__create{
         display: flex;
@@ -72,6 +75,12 @@ button {
     }
     .create__button{
         margin-top: 20px;
+    }
+    .image{
+        height: 0px;
+    }
+    .p__noTodo{
+        margin-left: 0px;
     }
 }
 @media only screen and (max-width: 660px){
