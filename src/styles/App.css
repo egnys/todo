@@ -80,7 +80,7 @@ button {
         height: 0px;
     }
     .p__noTodo{
-        margin-left: 0px;
+        display: none;
     }
 }
 @media only screen and (max-width: 660px){
