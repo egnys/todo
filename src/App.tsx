@@ -6,25 +6,29 @@ import './styles/App.css'
 import ToDos from "./components/ToDos";
 import ToDoForm from "./components/ToDoForm";
 
-
-function App() {
-    const [todos, setTodos] = useState([])
+type Todos = {
+  id: number,
+  body: string,
+  done: boolean,
+}
+const App:React.FC = () => {
+    const [todos, setTodos] = useState<Array<Todos>>([])
     React.useEffect(() => {
         const storageTodos = localStorage.getItem('todos');
         if (storageTodos) {
           setTodos(JSON.parse(storageTodos));
         }
       }, []);
-    function createToDo(newToDo){
+    function createToDo(newToDo:Todos):void{
         setTodos([...todos, newToDo])
         localStorage.setItem('todos', JSON.stringify([...todos, newToDo]));
     }
-    function removeToDo(todo){
+    function removeToDo(todo:Todos):void{
         const updatedTodos = todos.filter(todos => todos.id !== todo.id)
         setTodos(updatedTodos)
         localStorage.setItem('todos', JSON.stringify(updatedTodos))
     }
-    function changeToDo(todo){
+    function changeToDo(todo:Todos):void{
         const changedTodo = todos.map(todos => todos.id === todo.id ? {
             id: todos.id,
             body: todos.body,

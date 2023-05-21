@@ -1,11 +1,20 @@
 import React, {useState} from 'react';
 
-const ToDoForm = ({create}) => {
-    const [todo, setTodo] = useState('')
 
-    function createTodo (e){
+type TodoType = {
+    id: number;
+    body: string;
+    done: boolean;
+}
+type ToDoProps = {
+    create: (todo: TodoType) => void,
+}
+const ToDoForm: React.FC<ToDoProps> = ({create}) => {
+    const [todo, setTodo] = useState<string>('')
+
+    function createTodo (e : React.MouseEvent<HTMLButtonElement>){
         e.preventDefault()
-        const newTodo = {
+        const newTodo:TodoType = {
             id: Date.now(),
             body: todo,
             done: false,
